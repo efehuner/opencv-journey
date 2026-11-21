@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+requirements-backup.txt
+.env
+Thumbs.db
+.DS_Store
