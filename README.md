@@ -19,7 +19,10 @@ OpenCV/
 │   ├── resize_cropping.py            # Resizing and cropping images
 │   ├── blank_image_shapes_text.py    # Draw lines, rectangles, circles and text
 │   ├── warp_perspective.py           # Bird's-eye view of a card with perspective transform
-│   └── stacking_images.py            # Live webcam filters shown in a single stacked window
+│   ├── stacking_images.py            # Live webcam filters shown in a single stacked window
+│   ├── color_detection.py            # HSV color detection tuned with trackbars
+│   ├── mouse_points.py               # Print pixel coordinates of mouse clicks
+│   └── mouse_points_implementation.py # Click 4 corners to warp a book interactively
 ├── requirements.txt
 └── README.md
 ```
@@ -27,13 +30,14 @@ OpenCV/
 ## Getting Started
 
 ### Requirements
+
 - Python 3.10+
-- A webcam (only for `stacking_images.py`)
+- A webcam (only for `stacking_images.py` and `color_detection.py`)
 
 ### Installation
 
 ```bash
-git clone https://github.com/<your-username>/opencv-journey.git
+git clone https://github.com/efehuner/opencv-journey.git
 cd opencv-journey
 
 python -m venv venv
@@ -54,17 +58,21 @@ python src/basic_functions.py
 
 Scripts locate the `resources` folder automatically, so they can be run from any directory.
 Close image windows with any key; for video/webcam scripts press **`q`** to quit.
+In `mouse_points_implementation.py` click the corners in order (top-left, top-right, bottom-left, bottom-right), press **`r`** to reset.
 
 ## Topics Covered
 
-| Script | Topic |
-| --- | --- |
-| `read_images_videos_webcam.py` | `VideoCapture`, reading frames, keyboard exit |
-| `basic_functions.py` | `cvtColor`, `GaussianBlur`, `Canny`, `dilate`, `erode` |
-| `resize_cropping.py` | `resize`, numpy slicing for cropping |
-| `blank_image_shapes_text.py` | `line`, `rectangle`, `circle`, `putText` |
-| `warp_perspective.py` | `getPerspectiveTransform`, `warpPerspective` |
-| `stacking_images.py` | Combining multiple images with `hstack` / `vstack` |
+| Script                         | Topic                                                  |
+| ------------------------------ | ------------------------------------------------------ |
+| `read_images_videos_webcam.py` | `VideoCapture`, reading frames, keyboard exit          |
+| `basic_functions.py`           | `cvtColor`, `GaussianBlur`, `Canny`, `dilate`, `erode` |
+| `resize_cropping.py`           | `resize`, numpy slicing for cropping                   |
+| `blank_image_shapes_text.py`   | `line`, `rectangle`, `circle`, `putText`               |
+| `warp_perspective.py`          | `getPerspectiveTransform`, `warpPerspective`           |
+| `stacking_images.py`           | Combining multiple images with `hstack` / `vstack`     |
+| `color_detection.py`           | HSV color space, `createTrackbar`, `inRange`, `bitwise_and` |
+| `mouse_points.py`              | `setMouseCallback`, mouse events                       |
+| `mouse_points_implementation.py` | Interactive perspective warp with mouse clicks       |
 
 ## Roadmap
 
@@ -74,7 +82,8 @@ Close image windows with any key; for video/webcam scripts press **`q`** to quit
 - [x] Drawing shapes and text
 - [x] Warp perspective
 - [x] Stacking images
-- [ ] Color detection
+- [x] Color detection
+- [x] Mouse events
 - [ ] Contours and shape detection
 - [ ] Face detection
 
