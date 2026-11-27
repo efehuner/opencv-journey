@@ -22,7 +22,8 @@ OpenCV/
 │   ├── stacking_images.py            # Live webcam filters shown in a single stacked window
 │   ├── color_detection.py            # HSV color detection tuned with trackbars
 │   ├── mouse_points.py               # Print pixel coordinates of mouse clicks
-│   └── mouse_points_implementation.py # Click 4 corners to warp a book interactively
+│   ├── mouse_points_implementation.py # Click 4 corners to warp a book interactively
+│   └── contours_detection.py         # Live contour detection with points and area
 ├── requirements.txt
 └── README.md
 ```
@@ -32,7 +33,7 @@ OpenCV/
 ### Requirements
 
 - Python 3.10+
-- A webcam (only for `stacking_images.py` and `color_detection.py`)
+- A webcam (only for `stacking_images.py`, `color_detection.py` and `contours_detection.py`)
 
 ### Installation
 
@@ -73,6 +74,7 @@ In `mouse_points_implementation.py` click the corners in order (top-left, top-ri
 | `color_detection.py`           | HSV color space, `createTrackbar`, `inRange`, `bitwise_and` |
 | `mouse_points.py`              | `setMouseCallback`, mouse events                       |
 | `mouse_points_implementation.py` | Interactive perspective warp with mouse clicks       |
+| `contours_detection.py`        | `findContours`, `contourArea`, `approxPolyDP`, `boundingRect` |
 
 ## Roadmap
 
@@ -84,7 +86,7 @@ In `mouse_points_implementation.py` click the corners in order (top-left, top-ri
 - [x] Stacking images
 - [x] Color detection
 - [x] Mouse events
-- [ ] Contours and shape detection
+- [x] Contours and shape detection
 - [ ] Face detection
 
 ## License
